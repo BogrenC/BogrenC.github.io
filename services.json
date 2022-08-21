@@ -1,0 +1,31 @@
+[
+    {
+        "id": 0,
+        "name": "Bokföring",
+        "link": "/tjänster#bokföring",
+        "description": "Vi hjälper dig med bokföringen...",
+        "image": "folders.jpg"
+    },
+    {
+        "id": 1,
+        "name": "Rådgivning",
+        "link": "/tjänster#rådgivning",
+        "description": "Vi hjälper dig med rådgivning kring ditt företag...",
+        "image": "skylt.jpg"
+
+    },
+    {
+        "id": 2,
+        "name": "Redovisning",
+        "link": "/tjänster#redovisning",
+        "description": "Vi hjälper dig med din redovisning...",
+        "image": "berg_moln.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Bokslut",
+        "link": "/tjänster#bokslut",
+        "description": "Vi hjälper dig med bokslutet...",
+        "image": "tree.jpg"
+    }
+]

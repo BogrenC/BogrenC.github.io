@@ -1,0 +1,821 @@
+:root {
+    --orange: #EA5B0C;
+    --blue: #004879;
+
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+    font-family: 'Noto Serif', serif;
+}
+
+.navbar{    
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+
+.nav-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 30px 5% 2% 5%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: top;
+}
+
+nav{
+    text-align: right;
+}
+
+.nav-container img{
+    width: 200px;
+}
+
+nav ul li{
+    width: fit-content;
+    list-style-type: none;
+    display: inline-block;
+    padding: 12px;
+    position: relative;
+}
+
+nav ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    display: block;
+    margin: auto;
+}
+
+nav ul li:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ----- Utils ----- */
+
+h1{
+    font-family: 'Varela Round';
+    font-size: 64px;
+    font-weight: 100;
+}
+
+h2{    
+    font-family: 'Varela Round';
+    font-size: 48px;
+    font-weight: 100;
+}
+
+h3{
+    font-family: 'Varela Round';
+    font-size: 34px;
+    font-weight: 100;
+}
+
+h4{
+    font-family: 'Varela Round';
+    font-size: 13px;
+    font-weight: 100;
+}
+
+p{
+    font-family: 'Noto Serif';
+    font-size: 15px;
+    line-height: 2;
+}
+
+a{
+    color: black;
+    font-family: 'Varela Round';
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 13px;
+}
+
+button{
+    margin-top: 30px;
+    color: white;
+    font-size: 10px;
+    font-family: 'Varela Round';
+    font-weight: 100;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.btn-blue{
+    background-color: var(--blue);
+}
+
+.btn-orange{
+    background-color: var(--orange);
+}
+
+section{
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.card{
+    box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 0px 12px rgba(0, 50, 80, 0.2), 0px 0px 20px rgba(0, 50, 80, 0.1);
+}
+
+.card-button{
+    display: flex;
+    margin-top: 30px;
+    padding: 0;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.card-button a{
+    width: fit-content;
+    height: fit-content;
+    color: var(--orange);
+    text-align: left;
+    font-size: 12px;
+    font-family: 'Varela Round';
+}
+
+.card-button a::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    display: block;
+}
+
+.card-button a:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+.card-button img{
+    padding-left: 50px;
+    width: 20px;
+}
+
+/* ----- Section Header ----- */
+.header{
+    background-color: white;
+    align-items: top;
+}
+
+.hero{
+    width: clamp(800px, 60%, 60%);
+    height: clamp(300px, 70vw, 700px);
+    border-radius: 0 0 400px 0;
+    background-image: url(images/hero_blue.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.header .card{
+    width: clamp(800px, 50%, 1200px);
+    position: absolute;
+    top: clamp(150px, 20%, 20%);
+    right: 0%;
+    box-shadow: 0px 0px 12px rgba(0, 50, 80, 0.2), 0px 0px 20px rgba(0, 50, 80, 0.1);
+    padding: 50px 60px 70px 60px;
+}
+
+.header p{
+    margin-top: 30px;
+    max-width: 600px;
+}
+
+/* ------ Section Tjänster ------ */
+.tjänster{
+    height: 80vh;
+    display: flex;
+    position: relative;
+    padding: 4% 0 0 0;
+}
+
+.tjänster .card-container{
+    width: 100%;
+    max-width: 1440px;
+    min-height: 400px;
+    margin: 0 auto;
+    padding: 30px 5% 2% 5%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.tjänster .card{
+    flex: 1;
+    height: 100%;
+    max-width: 400px;
+    min-width: 180px;
+    min-height: 300px;
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+}
+
+.tjänster .left{
+    box-sizing: border-box  ;
+    min-width: 280px;
+    max-width: 355px;
+    padding-right: clamp(2%, 3%, 5%);
+    margin-bottom: 20px;
+    flex: 1;
+}
+
+.carousel-container{
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.tjänster .card-overlay{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 0%;
+    padding: 10%;
+    margin: auto 0;
+    background-color: rgba(234, 91, 12, 0.7);
+    background-blend-mode: multiply;
+    position: relative;
+    z-index: 2;
+    transition: 0.75s;
+    -webkit-transition: 0.75s;
+    overflow: hidden;
+    opacity: 0;
+}
+
+/*.card-overlay:hover {
+    height: 100%;
+    opacity: 100%;
+}*/
+
+.card-overlay-hover {
+    height: 100% !important;
+    opacity: 100% !important;
+}
+
+.card-overlay h2{
+    font-size: 24px;
+    color: white;
+    padding-bottom: 10px;
+}
+
+.card-overlay p{
+    color: white;
+    line-height: 1.6;
+    justify-self: flex-end;
+}
+
+.card-overlay .card-button a{
+    color: white;
+}
+
+.card-overlay .card-button a::after{
+    background-color: white;
+}
+
+
+/* ----- Section Ledord ----- */
+.ledord{
+    height: 80vh;
+    display: flex;
+    position: relative;
+    padding: 8% 0 8% 0%;
+    justify-content: space-between;
+}
+
+.ledord-container{
+    max-width: 1440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+    padding: 0 10%;
+}
+
+.ledord-card {
+    width: 50%;
+    min-width: 400px;
+    box-sizing: border-box;
+    display: inline-block;
+    position: relative;
+    padding: 0 5% 5%;
+}
+
+.ledord-card i{
+    display: block;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    background-color: var(--orange);
+    font-family: 'Noto Serif';
+    font-size: 34px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-top: 2%;
+    box-sizing: border-box;
+    font-style: normal;
+}
+
+.ledord-card h3{
+    color: black;
+}
+
+.ledord-card p{
+    color: black;
+}
+
+/* ----- Section Historia ----- */
+.historia{
+    flex-wrap: wrap;
+    padding: 0 0 8% 0;
+}
+
+.historia-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.historia-left{
+    justify-content: flex-end;
+}
+
+.historia-right{
+    justify-content: flex-start;
+}
+
+.background-image {
+    height: auto;
+    min-height: 600px;
+    width: clamp(50%, 50%, 100%);
+    position: relative;
+    background-size: cover;
+    background-position: left;
+}
+
+.background-right {
+    border-radius: 200px 0 0;
+    background-image: url(images/kalkylator.jpg);
+
+}
+
+.background-left {
+    border-radius: 0 0 200px;
+
+    background-image: url(images/skrivbord.jpg);
+}
+
+.historia-card-container {
+    position: absolute;
+    display: flex;
+    right: 0%;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1100px;
+    z-index: 2;
+}
+
+.align-left{
+    left: 0%;
+}
+
+
+.historia .card{
+    width: clamp(800px, 50%, 1200px);
+    position: relative;
+    top: clamp(40px, 10%, 10%);
+    box-shadow: 0px 0px 12px rgba(0, 50, 80, 0.2), 0px 0px 20px rgba(0, 50, 80, 0.1);
+    padding: 50px 60px 70px 60px;
+}
+
+.historia .card ul{
+    line-height: 2;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+
+/*
+.historia-right{
+    width: 50%;
+    height: 75vh;
+    max-height: 900px;
+    border-radius: 400px 0 0 0;
+    background-image: url(images/kalkylator.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.historia-left{
+    width: 50%;
+    height: 75vh;
+    max-height: 900px;
+    border-radius: 0 0 400px 0;
+    background-image: url(images/skrivbord.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.historia .card-container{
+    width: 50%;
+    height: 75vh;
+    max-height: 900px;
+    position: relative;
+}
+
+.historia-card{
+    max-width: 100%;
+    min-width: 720px;
+    padding: 50px 60px 70px 60px;
+    z-index: 2;
+    position: relative;
+    top: clamp(5%, 20%, 20%);
+}
+
+.historia-card ul{
+    line-height: 2;
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.card-left{
+    left: 10%;
+}
+
+.card-right{
+    right: 10%;
+}
+
+.historia-card h2{
+    padding-bottom: 20px;
+}
+
+.historia-card p{
+    box-sizing: border-box;
+    padding-right: 10%;
+}
+*/
+
+/* ----- Recensioner ----- */
+
+.recensioner{
+    justify-content: center;
+    padding-bottom: 8%;
+}
+
+.recensioner-container{
+    max-width: 1440px;
+    text-align: center;
+}
+
+.recensioner h2{
+    padding-bottom: 40px;
+}
+
+.recensioner p{
+    max-width: 800px;
+    color: #6D7783;
+    padding-bottom: 50px;
+    line-height: 2;
+}
+
+.recensioner h3{
+    padding-bottom: 10px;
+    font-size: 18px;
+}
+
+.recensioner h4{
+    color: var(--orange);
+}
+
+/* ----- Artiklar ----- */
+.artiklar{
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding-bottom: 8%;
+
+}
+
+.artikel{
+    width: 50%;
+    max-width: 720px;
+    display: flex;
+}
+.artikel img{
+    width: 50%;
+    max-width: 360px;
+    height: 100%;
+    max-height: 360px;
+}
+
+.artikel div{
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    width: 50%;
+    max-width: 360px;
+    max-height: 360px;
+    box-sizing: border-box;
+    padding: 5% 8% 0 5%;
+}
+
+.artikel h3{
+    font-size: 24px;
+    padding-bottom: 15px;
+}
+
+.artikel p{
+    padding-right: 10%;
+}
+
+.artikel a{
+    color: var(--orange);
+    padding-top: 20%;
+    padding-bottom: 20px;
+}
+
+/* ----- Kontaktformulär ----- */
+.kontakt{
+    margin: 0 auto;
+    max-width: 1000px;
+    padding: 4% 0 8% 0;
+}
+
+.kontakt-text{
+    width: 50%;
+    padding-right: 5%;
+    padding-left: 10%;
+    box-sizing: border-box;
+}
+
+.kontakt-text h2{
+    padding-bottom: 20px;
+}
+
+.kontakt-form{
+    width: 50%;
+    padding: 0 2%;
+}
+
+.kontakt-form form{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.kontakt-form input:focus,
+.kontakt-form select:focus,
+.kontakt-form textarea:focus{
+    outline: 2px solid var(--orange);
+}
+
+.kontakt-form input[type='text'],
+.kontakt-form input[type='email'],
+.kontakt-form select,
+.kontakt-form textarea{
+    border: none;
+    width: 100%;
+    background-color: lightgrey;
+    border-radius: 4px;
+    padding: 2%;
+    margin-bottom: 10px;
+    font-family: 'Varela Round';
+    resize: none;
+}
+
+.kontakt-form select{
+    width: 104%;
+}
+
+.kontakt-form input[type='submit']{
+    border: none;
+    background-color: var(--blue);
+    border-radius: 4px;
+    padding: 2% 10%;
+    color: white;
+    font-family: 'Varela Round';
+    font-weight: 100;
+}
+
+/* ----- Footer ----- */
+footer{
+    display: flex;
+    padding: 5% 8%;
+    justify-content: space-between;
+    align-items: top;
+    position: relative;
+    background-color: rgb(40, 40, 40);
+    height: 20vh;
+}
+
+footer div{
+    flex: 1;
+}
+
+footer .foot1{
+    flex: 2;
+    padding-right: 10%;
+    max-width: 350px;
+}
+
+footer h4{
+    font-size: 16px;
+    font-family: 'Varela Round';
+    color: white;
+    padding-bottom: 5%;
+}
+
+footer ul li{
+    width: fit-content;
+    list-style-type: none;
+    padding-bottom: 6px;
+    display: block;
+    position: relative;
+}
+
+footer ul li a{
+    color: white;
+    font-family: 'Noto Serif';
+    text-decoration: none;
+    font-size: 10px;
+}
+
+footer ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: var(--orange);
+    display: block;
+    margin: auto;
+}
+
+footer ul li:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+footer p{
+    font-size: 10px;
+    color: white;
+    font-family: 'Noto Serif';
+    padding-left: 5px;
+}
+
+footer img{
+    width: 150px;
+    padding-bottom: 5%;
+}
+
+address {
+    font-size: 10px;
+    font-style: normal;
+    color: white;
+    font-family: 'Noto Serif';
+}
+
+
+/* Testing Raw css arrows */
+.arrow-left {
+    display: inline-block;
+    position: relative;
+    width: 30px;
+    height: 8px;
+    cursor: pointer;
+}
+
+.arrow-right {
+    display: inline-block;
+    position: relative;
+    margin-left: 25px;
+    width: 30px;
+    height: 8px;
+    cursor: pointer;
+}
+
+.arrow {
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: var(--orange);
+}
+
+.arrow::after, .arrow::before {
+    content: '';
+    position: absolute;
+    width: 25%;
+    height: 2px;
+    right: -2px;
+    background-color: var(--orange);
+}
+.arrow::after {
+    top: -2px;
+    transform: rotate(45deg);
+}
+.arrow::before {
+    top: 2px;
+    transform: rotate(-45deg);
+}
+
+@media screen and (max-width: 1230px) {
+    nav ul li{
+        display: block;
+        padding: 0;
+        margin-left: auto;
+    }
+}
+@media screen and (max-width: 900px) {
+    nav a{
+        color: white;
+    }
+
+    .tjänster .card-container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "top top";
+        width: 100%;
+    }
+
+    .tjänster .card{
+        width: 100%;
+        max-width: none;
+    }
+
+    .tjänster .left{
+        grid-area: top;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    h1{
+        font-size: 48px;
+    }
+
+    .header{
+        flex-direction: column;
+    }
+    
+    .hero{
+        display: block;
+        width: 100%;
+        height: clamp(150px, 15vh, 150px);
+        border-radius: 0;
+    }
+
+    .header .card{
+        max-width: 100%;
+        position: relative;
+        top: 20%;
+        box-shadow: none;
+        padding: 30px 5% 2% 5%;
+    }
+
+    .historia{
+        flex-direction: column;
+    }
+
+    .historia div{
+        width: 100%;
+    }
+
+}
